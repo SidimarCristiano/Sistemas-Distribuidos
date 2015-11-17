@@ -20,6 +20,7 @@ public class Cliente {
         socket = new Socket(ip, Integer.parseInt(porta));
         PrintWriter escritor = new PrintWriter(socket.getOutputStream());
         JOptionPane.showMessageDialog(null, "botao apertado");
+        //alteracao
     }
 
    
