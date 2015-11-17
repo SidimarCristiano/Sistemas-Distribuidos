@@ -104,14 +104,15 @@ public class Conexao extends javax.swing.JFrame {
        
         try {
             if(jTIP.getText().equals("")){
-               
+               JOptionPane.showMessageDialog(null,"Campo IP deve ser preenchido");
+                
             }else if(jTPorta.getText().equals("")){
-                    JOptionPane.showMessageDialog(null, "IP deve ser prenchido");
+                    JOptionPane.showMessageDialog(null, "A porta deve ser preenchida");
                     }
             else{
-              JOptionPane.showMessageDialog(null, "IP deve ser prenchido");
+              
               Cliente c1 = new Cliente();
-                c1.ConfiguraRede(jTIP.getText(), Integer.parseInt(jTPorta.getText()));
+                c1.ConfiguraRede(jTIP.getText(),jTPorta.getText());
             }
         } catch (IOException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
