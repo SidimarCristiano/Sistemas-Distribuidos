@@ -34,7 +34,7 @@ public class Cliente {
     public void setSocket(Socket socket) {
         this.socket = socket;
     }
-
+//kjsdbfjsfbdsjfbsdjhfbsdjhf
     
  public int getPorta() {
         return porta;
