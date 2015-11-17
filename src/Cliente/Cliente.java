@@ -26,6 +26,8 @@ public class Cliente {
    
     public Socket getSocket() {
         return socket;
+        
+        //sidibardfgdggdfgd
     }
 
     
@@ -34,7 +36,7 @@ public class Cliente {
     }
 
     
-    public int getPorta() {
+ public int getPorta() {
         return porta;
     }
 
