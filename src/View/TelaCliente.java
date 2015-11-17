@@ -234,7 +234,7 @@ public class TelaCliente extends javax.swing.JFrame {
         senha = jTSenha.getText();
         Cliente c = new Cliente();
          
-        //
+        
          
     }//GEN-LAST:event_jBAcessarActionPerformed
 
