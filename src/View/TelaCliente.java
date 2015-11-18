@@ -100,6 +100,11 @@ public class TelaCliente extends javax.swing.JFrame {
         });
 
         jBCancelar.setText("CANCELAR");
+        jBCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCancelarActionPerformed(evt);
+            }
+        });
 
         jBCCriar.setText("CRIAR");
         jBCCriar.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +253,15 @@ public class TelaCliente extends javax.swing.JFrame {
     private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTSenhaActionPerformed
+
+    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
+        
+        Conexao conexao = new Conexao();
+        conexao.setVisible(true);
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jBCancelarActionPerformed
 
     /**
      * @param args the command line arguments

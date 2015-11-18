@@ -46,6 +46,12 @@ public class Conexao extends javax.swing.JFrame {
 
         jLabel2.setText("Porta: ");
 
+        jTIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTIPActionPerformed(evt);
+            }
+        });
+
         jBConectar.setText("Conectar");
         jBConectar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +129,10 @@ public class Conexao extends javax.swing.JFrame {
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
             this.setVisible(false);  // TODO add your handling code here:
     }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jTIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTIPActionPerformed
 
     /**
      * @param args the command line arguments

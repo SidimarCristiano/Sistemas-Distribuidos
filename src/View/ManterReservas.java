@@ -27,21 +27,92 @@ public class ManterReservas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTReservas = new javax.swing.JTable();
+        jBAlterarReserva = new javax.swing.JButton();
+        jBExcluirReserva = new javax.swing.JButton();
+        jBAdicionarReserva = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTReservas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Sala", "Data", "Hora", "Usuário", "Disponibilidade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTReservas);
+
+        jBAlterarReserva.setText("Alterar Reserva");
+        jBAlterarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAlterarReservaActionPerformed(evt);
+            }
+        });
+
+        jBExcluirReserva.setText("Excluir Reserva");
+        jBExcluirReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirReservaActionPerformed(evt);
+            }
+        });
+
+        jBAdicionarReserva.setText("Adicionar Reserva");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBAlterarReserva)
+                        .addGap(89, 89, 89)
+                        .addComponent(jBExcluirReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBAdicionarReserva))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBAlterarReserva)
+                    .addComponent(jBExcluirReserva)
+                    .addComponent(jBAdicionarReserva))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
+
+        jBAlterarReserva.getAccessibleContext().setAccessibleName("Alterar");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBAlterarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAlterarReservaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBAlterarReservaActionPerformed
+
+    private void jBExcluirReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirReservaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBExcluirReservaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +151,10 @@ public class ManterReservas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBAdicionarReserva;
+    private javax.swing.JButton jBAlterarReserva;
+    private javax.swing.JButton jBExcluirReserva;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTReservas;
     // End of variables declaration//GEN-END:variables
 }

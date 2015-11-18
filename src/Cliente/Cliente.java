@@ -17,17 +17,15 @@ public class Cliente {
     private int porta;
 
     public void ConfiguraRede(String ip, String porta) throws IOException {;
-        socket = new Socket(ip, Integer.parseInt(porta));
-        PrintWriter escritor = new PrintWriter(socket.getOutputStream());
-        JOptionPane.showMessageDialog(null, "botao apertado");
-        //alteracao
+       
+    
     }
 
    
     public Socket getSocket() {
         return socket;
         
-        //sidibardfgdggdfgd
+       
     }
 
     
@@ -36,7 +34,7 @@ public class Cliente {
     }
 
     
- public int getPorta() {
+    public int getPorta() {
         return porta;
     }
 
