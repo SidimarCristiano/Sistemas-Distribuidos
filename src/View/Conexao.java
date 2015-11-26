@@ -16,12 +16,17 @@ import javax.swing.JOptionPane;
  * @author Sidimar
  */
 public class Conexao extends javax.swing.JFrame {
+    
+    Cliente c1;
+    TelaCliente tc;
 
     /**
      * Creates new form Conexao
      */
     public Conexao() {
         initComponents();
+        c1 = new Cliente();
+        
     }
 
     /**
@@ -83,12 +88,12 @@ public class Conexao extends javax.swing.JFrame {
                         .addComponent(jBCancelar))
                     .addComponent(jTIP, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTPorta, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -96,39 +101,44 @@ public class Conexao extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTPorta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBConectar)
                     .addComponent(jBCancelar))
-                .addGap(93, 93, 93))
+                .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
+        
+        this.setVisible(false);
+        
+
+    }//GEN-LAST:event_jBCancelarActionPerformed
+
     private void jBConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConectarActionPerformed
-       
+        
         try {
-            if(jTIP.getText().equals("")){
-               JOptionPane.showMessageDialog(null,"Campo IP deve ser preenchido");
-                
-            }else if(jTPorta.getText().equals("")){
-                    JOptionPane.showMessageDialog(null, "A porta deve ser preenchida");
-                    }
-            else{
-              
-              Cliente c1 = new Cliente();
-                c1.ConfiguraRede(jTIP.getText(),jTPorta.getText());
+            if (jTIP.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Campo IP deve ser preenchido");
+            } else if (jTPorta.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "A porta deve ser preenchida");
+            } else {
+                if (c1.configuraRede(jTIP.getText(), jTPorta.getText()))//se for true a tela de login
+                {   
+                     tc = new TelaCliente(c1);
+                     tc.setVisible(true);
+                    
+                }
+               
             }
         } catch (IOException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println(ex.getMessage());
         }
-
     }//GEN-LAST:event_jBConectarActionPerformed
-
-    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
-            this.setVisible(false);  // TODO add your handling code here:
-    }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jTIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTIPActionPerformed
         // TODO add your handling code here:
