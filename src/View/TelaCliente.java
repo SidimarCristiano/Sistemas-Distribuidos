@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.DatagramSocket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,7 +45,6 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTLogin = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTSenha = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTNome = new javax.swing.JTextField();
@@ -52,11 +52,12 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTCLogin = new javax.swing.JTextField();
-        jTCSenha = new javax.swing.JTextField();
         jTCDepartamento = new javax.swing.JTextField();
         jBAcessar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
         jBCCriar = new javax.swing.JButton();
+        jTCSenha = new javax.swing.JPasswordField();
+        jTSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,13 +66,13 @@ public class TelaCliente extends javax.swing.JFrame {
 
         jLabel2.setText("LOGIN:");
 
-        jLabel3.setText("SENHA:");
-
-        jTSenha.addActionListener(new java.awt.event.ActionListener() {
+        jTLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTSenhaActionPerformed(evt);
+                jTLoginActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("SENHA:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("NOVO CADASTRO");
@@ -96,12 +97,6 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
 
-        jTCSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTCSenhaActionPerformed(evt);
-            }
-        });
-
         jBAcessar.setText("ACESSAR");
         jBAcessar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +118,20 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
 
+        jTCSenha.setText("jPasswordField1");
+        jTCSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTCSenhaActionPerformed(evt);
+            }
+        });
+
+        jTSenha.setText("jPasswordField1");
+        jTSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTSenhaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -135,19 +144,19 @@ public class TelaCliente extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(jTLogin))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jBCancelar)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTCDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTCDepartamento))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -155,12 +164,13 @@ public class TelaCliente extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTCSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                                    .addComponent(jTNome, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                                    .addComponent(jTCLogin))))
+                                    .addComponent(jTCLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
+                                    .addComponent(jTCSenha)
+                                    .addComponent(jTNome))
+                                .addGap(2, 2, 2)))
                         .addGap(31, 31, 31)
                         .addComponent(jBCCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -169,7 +179,7 @@ public class TelaCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,19 +194,19 @@ public class TelaCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBCancelar))
+                    .addComponent(jBCancelar)
+                    .addComponent(jTSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jTCLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTCSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +215,7 @@ public class TelaCliente extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jTCDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBCCriar))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -218,7 +228,9 @@ public class TelaCliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -232,17 +244,15 @@ public class TelaCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTCLoginActionPerformed
 
-    private void jTCSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTCSenhaActionPerformed
-
     private void jBAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessarActionPerformed
          
         String login ;
         String senha;
+        String nome;
+     
         login= jTLogin.getText();
         senha = jTSenha.getText();
-        
+        nome = jTNome.getText();
         
         String dados = "1#"+login+"#"+senha+"@";
         
@@ -260,15 +270,48 @@ public class TelaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAcessarActionPerformed
 
     private void jBCCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCCriarActionPerformed
-     
+       if(jTNome.getText().equals("")) {
+           System.out.println("Nome nao preenchido");
+                  
+       }
+       else if ( jTLogin.getText().equals("")) {
+            
+           JOptionPane.showMessageDialog(null, "login não preenchido");    
+           
+       }
+       
+       else if (jTCSenha.getText().equals("")) {
+           
+           JOptionPane.showMessageDialog(null,"Senha nao preenchida ");
+            
+        }
+       
+       else if (jTCDepartamento.getText().equals("")) {
+           
+           JOptionPane.showMessageDialog(null, "Departamento nao preenchido");
+            
+        }
+       else {
+       
+           
+       
+       String nome = jTNome.getText();
+       String clogin = jTCLogin.getText();
+       String senha = jTCSenha.getText();
+       String departamento = jTCDepartamento.getText();
+       
+       String cadastro = "3#" + clogin + "#"+ nome + "#" + senha + "#" + "#" + departamento + "@";
+       
+        try {
+            
+            c1.enviaDados(cadastro);
+            
+        } catch (Exception e) {
+                   }
         
-        
+       } 
         
     }//GEN-LAST:event_jBCCriarActionPerformed
-
-    private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTSenhaActionPerformed
 
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
 
@@ -276,6 +319,18 @@ public class TelaCliente extends javax.swing.JFrame {
         conexao.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jTLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTLoginActionPerformed
+
+    private void jTCSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTCSenhaActionPerformed
+
+    private void jTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,9 +382,9 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTCDepartamento;
     private javax.swing.JTextField jTCLogin;
-    private javax.swing.JTextField jTCSenha;
+    private javax.swing.JPasswordField jTCSenha;
     private javax.swing.JTextField jTLogin;
     private javax.swing.JTextField jTNome;
-    private javax.swing.JTextField jTSenha;
+    private javax.swing.JPasswordField jTSenha;
     // End of variables declaration//GEN-END:variables
 }
