@@ -41,6 +41,12 @@ public class Conexao extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTIP = new javax.swing.JTextField();
+        try{ 
+ javax.swing.text.MaskFormatter cpf= new javax.swing.text.MaskFormatter("###.###.###-##"); 
+ jTIP = new javax.swing.JFormattedTextField(cpf); 
+ } 
+ catch (Exception e){ 
+ }
         jTPorta = new javax.swing.JTextField();
         jBConectar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
