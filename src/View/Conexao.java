@@ -114,6 +114,7 @@ public class Conexao extends javax.swing.JFrame {
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
         
         this.setVisible(false);
+     
         
 
     }//GEN-LAST:event_jBCancelarActionPerformed
